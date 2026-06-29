@@ -9,10 +9,9 @@
 }
 
 body {
-  direction: rtl;
-  text-align: right;
   color: var(--hebrew-ink);
   background: linear-gradient(90deg, var(--hebrew-soft) 0, var(--hebrew-soft) var(--hebrew-sidebar-width), #fff var(--hebrew-sidebar-width));
+  overflow-x: hidden;
 }
 
 .side-bar {
@@ -58,8 +57,9 @@ body {
 }
 
 .main {
-  margin-right: var(--hebrew-sidebar-width);
-  margin-left: 0;
+  max-width: none;
+  margin-right: var(--hebrew-sidebar-width) !important;
+  margin-left: 0 !important;
 }
 
 .main-header {
@@ -72,6 +72,7 @@ body {
 
 .main-content-wrap {
   max-width: none;
+  margin: 0;
 }
 
 .main-content {
