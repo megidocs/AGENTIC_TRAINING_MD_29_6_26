@@ -1,0 +1,31 @@
+title: "מרחב למידה בעברית"
+description: "אתר לימודי קטן ונוח לעריכה בעזרת Markdown ו-GitHub Pages."
+lang: he-IL
+remote_theme: just-the-docs/just-the-docs@v0.12.0
+
+plugins:
+  - jekyll-remote-theme
+
+url: "https://megidocs.github.io"
+baseurl: "/AGENTIC_TRAINING_MD_29_6_26"
+
+color_scheme: light
+search_enabled: true
+heading_anchors: true
+
+aux_links:
+  "מאגר GitHub":
+    - "https://github.com/megidocs/AGENTIC_TRAINING_MD_29_6_26"
+
+callouts:
+  note:
+    title: "שימו לב"
+    color: blue
+  task:
+    title: "משימה"
+    color: green
+
+exclude:
+  - README.md
+  - AGENTS.md
+  - THIRD_PARTY_NOTICES.md

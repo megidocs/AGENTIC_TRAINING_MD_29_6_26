@@ -1,46 +1,45 @@
 # Repository Guidelines
 
-## Project Structure & Module Organization
+## Project Structure & Content
 
-This repository is currently a clean starting point. Keep the root focused on project metadata, documentation, and build configuration. As code is added, prefer a predictable layout:
+This repository is a small Hebrew Jekyll site for GitHub Pages. Keep content simple and teacher-editable:
 
-- `src/` for application or library source code.
-- `tests/` for automated tests that mirror `src/` structure.
-- `assets/` for static files such as images, sample data, or fixtures.
-- `docs/` for extended design notes, API references, or setup guides.
+- `index.md` is the Hebrew home page.
+- `about.md` explains the site.
+- `lessons/` contains lesson pages written in Markdown.
+- `_sass/custom/custom.scss` contains the minimal local RTL styling.
+- `.github/workflows/deploy-pages.yml` builds and deploys the site through GitHub Actions.
 
-Avoid placing generated files, local caches, or editor-specific output in the repository.
+Do not copy Just the Docs theme source files unless a small, deliberate override is required.
 
-## Build, Test, and Development Commands
+## Page Front Matter
 
-No build system is configured yet. When one is introduced, document the exact commands here and keep them runnable from the repository root. Suggested examples:
+Every page must start with Jekyll front matter. Use this pattern:
 
-- `npm test` or `gradlew test`: run the full test suite.
-- `npm run build` or `gradlew build`: compile/package the project.
-- `npm run lint` or `gradlew lint`: run static checks and formatting validation.
+```yaml
+---
+layout: default
+title: "כותרת"
+nav_order: 3
+---
+```
 
-Prefer scripts or tasks with clear names so contributors do not need to memorize tool-specific flags.
+Lessons should also set `parent: "שיעורים"` when grouped under the lessons section.
 
-## Coding Style & Naming Conventions
+## Hebrew, RTL, and Technical Text
 
-Follow the conventions of the language and framework selected for this project. Until a formatter is added, use consistent indentation, descriptive names, and small files with single responsibilities. Recommended defaults:
+The site is primarily Hebrew and right-to-left. Keep prose in Hebrew and use clear teacher-facing language. Code blocks, terminal commands, filenames, URLs, and inline `code` must remain left-to-right. Preserve the RTL CSS rules that protect technical tokens.
 
-- Use 2 spaces for JavaScript/TypeScript/JSON/YAML and 4 spaces for Java/Kotlin/Python.
-- Name files after the main class, component, or feature they contain.
-- Use `camelCase` for variables/functions and `PascalCase` for classes/components.
+## Build and Deployment
 
-Add formatter and lint configuration before the codebase grows beyond a few files.
+The required workflow is GitHub Pages through GitHub Actions. Every meaningful change must leave the Pages build passing. Check failures in the repository's Actions tab and fix the content or configuration before continuing.
 
-## Testing Guidelines
+Local WSL, Ruby, Bundler, Jekyll, and `bundle exec jekyll serve` are not part of this workshop repository's required workflow. Optional local preview may be documented only for advanced users who already have that environment working.
 
-Place tests under `tests/` or the framework-standard test directory. Test names should describe behavior, for example `creates_user_when_input_is_valid` or `UserServiceTest`. Cover new features, bug fixes, and edge cases before opening a pull request.
+## Privacy and Safety
 
-## Commit & Pull Request Guidelines
+Never commit private student, parent, teacher, or school data. Use fictional examples in lessons and screenshots.
 
-This directory has no Git history yet, so no existing commit convention is available. Use concise, imperative commit messages such as `Add initial user model` or `Fix validation error handling`.
+## Git and Agent Rules
 
-Pull requests should include a short summary, the reason for the change, testing performed, and screenshots or logs when behavior or UI changes. Link related issues when available.
-
-## Agent-Specific Instructions
-
-Before making changes, inspect the current repository state and preserve user-created files. Keep edits narrowly scoped to the requested task, and update this guide when build tools, tests, or project structure are added.
+After this initial setup, future agents may read the repository freely but must not commit, pull, or push unless the user explicitly asks. Keep edits focused and update documentation when structure, navigation, or deployment changes.

@@ -1,0 +1,44 @@
+body {
+  direction: rtl;
+  text-align: right;
+}
+
+.main-content,
+.side-bar,
+.site-header,
+.site-footer {
+  direction: rtl;
+}
+
+.main-content ol,
+.main-content ul {
+  padding-right: 1.5rem;
+  padding-left: 0;
+}
+
+.main-content table {
+  direction: rtl;
+}
+
+code,
+pre,
+kbd,
+samp,
+.highlight,
+.language-plaintext,
+.rouge-code,
+.rouge-table {
+  direction: ltr;
+  text-align: left;
+  unicode-bidi: embed;
+}
+
+.main-content code {
+  display: inline-block;
+}
+
+@media (max-width: 50rem) {
+  .main-content {
+    line-height: 1.75;
+  }
+}
